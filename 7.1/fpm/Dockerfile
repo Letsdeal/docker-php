@@ -1,4 +1,4 @@
-FROM php:7.1.3-fpm
+FROM php:7.1-fpm
 
 RUN apt-get update && apt-get install -y \
         git \
@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
       && pecl install apcu xdebug \
       && docker-php-ext-enable apcu
 
-ENV DOCKERIZE_VERSION v0.3.0
+ENV DOCKERIZE_VERSION v0.4.0
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
     && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
     && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
@@ -38,5 +38,5 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php -r "unlink('composer-setup.php');" \
     && mv composer.phar /usr/local/bin/composer
 
-ENV COMPOSER_ALLOW_SUPERUSER true
 ENV COMPOSER_BIN_DIR /usr/local/bin
+ENV COMPOSER_ALLOW_SUPERUSER 1
