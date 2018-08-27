@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
         libicu-dev \
         libssl-dev \
         wget \
+        unzip\
       && docker-php-ext-install zip intl mbstring pdo pdo_mysql opcache bcmath \
       && pecl install apcu xdebug \
       && docker-php-ext-enable apcu
