@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install -y \
         wget \
         unzip\
       && docker-php-ext-install zip intl mbstring pdo pdo_mysql opcache bcmath \
-      && pecl install apcu xdebug-2.7.0beta1 \
-      && docker-php-ext-enable apcu
+      && pecl install apcu mongodb xdebug-2.7.0beta1 \
+      && docker-php-ext-enable apcu mongodb
 
 ENV DOCKERIZE_VERSION v0.6.1
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
