@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
         wget \
         unzip\
       && docker-php-ext-install zip intl mbstring pdo pdo_mysql opcache bcmath \
-      && pecl install apcu mongodb xdebug-2.7.0beta1 \
+      && pecl install apcu mongodb xdebug-2.7.0RC1 \
       && docker-php-ext-enable apcu mongodb
 
 ENV DOCKERIZE_VERSION v0.6.1
