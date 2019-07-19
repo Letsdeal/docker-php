@@ -1,6 +1,5 @@
 # Fix https://github.com/symfony/symfony/issues/32395
-# TODO: revert to php:7.3-apache
-FROM php:7.3.6-apache
+FROM php:7.3-apache
 
 RUN apt-get update && apt-get install -y \
         acl \
