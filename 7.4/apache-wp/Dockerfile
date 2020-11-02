@@ -55,9 +55,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 RUN curl -o /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x /usr/local/bin/wp \
 
-    # Install Prestissimo (pallarell installation)
-    && composer global require hirak/prestissimo \
-
     # Basic config
     && { \
         echo 'ServerTokens Prod'; \
