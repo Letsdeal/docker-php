@@ -2,7 +2,7 @@ FROM php:8.0-apache
 
 ENV TERM=xterm \
     PNGOUT_VERSION=20200115 \
-    IMAGICK_VERSION=3.4.4 \
+    IMAGICK_VERSION=3.5.0 \
     COMPOSER_ALLOW_SUPERUSER=1
 
 # Install base requirements & sensible defaults + required PHP extensions
