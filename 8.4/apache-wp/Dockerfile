@@ -53,7 +53,7 @@ RUN apt-get update \
     && a2enmod rewrite expires headers deflate \
     && a2dismod -f autoindex
 
-COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+COPY --from=composer:2.8 /usr/bin/composer /usr/local/bin/composer
 
 RUN curl -o /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x /usr/local/bin/wp \
